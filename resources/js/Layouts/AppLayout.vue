@@ -13,7 +13,7 @@ const timeUntilNextGame = useCountdownUntilNextGame(serverTime);
 <template>
     <div class="min-h-svh flex flex-col bg-white dark:bg-neutral-950">
         <header
-            class="border-b border-b-neutral-100 p-3 dark:border-b-neutral-900"
+            class="border-b border-b-neutral-200 p-3 dark:border-b-neutral-900"
         >
             <nav class="flex items-center justify-between">
                 <Button :as="Link" href="/" variant="secondary">
