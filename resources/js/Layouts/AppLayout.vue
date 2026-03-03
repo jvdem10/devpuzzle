@@ -31,13 +31,13 @@ const timeUntilNextGame = useCountdownUntilNextGame(serverTime);
         </main>
 
         <footer
-            class="flex flex-col md:flex-row items-center justify-center md:justify-between py-3 px-6"
+            class="flex flex-col md:flex-row items-center justify-center md:justify-between py-3 px-6 text-neutral-400 dark:text-neutral-500 text-sm"
         >
-            <span class="text-sm text-muted">
+            <span>
                 devpuzzle &copy; {{ new Date().getFullYear() }}
             </span>
 
-            <span class="text-sm text-muted">
+            <span>
                 {{ timeUntilNextGame }} until next game (UTC+0)
             </span>
         </footer>
