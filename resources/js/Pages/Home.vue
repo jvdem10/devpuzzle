@@ -1,19 +1,61 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
+import { Head } from "@inertiajs/vue3";
 import guessTheTechIllustration from "@/assets/images/guess-the-tech-game-illustration.png";
 import revealTheTechIllustration from "@/assets/images/reveal-the-tech-game-illustration.png";
 </script>
 
 <template>
-    <p class="text-4xl md:text-6xl text-center mb-4 mt-6 mx-6">
+    <Head>
+        <meta
+            name="description"
+            content="Play DevPuzzle — a daily game for developers. Guess the technologies and test your programming knowledge through interactive puzzles and clues."
+        />
+
+        <!-- OG -->
+        <meta
+            property="og:title"
+            content="DevPuzzle: The daily challenge for developers"
+        />
+        <meta
+            property="og:description"
+            content="Guess the technologies and test your knowledge in this daily puzzle game for developers."
+        />
+        <meta
+            property="og:image"
+            content="https://devpuzzle.net/og-image.png"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://devpuzzle.net" />
+
+        <!-- Twitter card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="DevPuzzle: The daily challenge for developers"
+        />
+        <meta
+            name="twitter:description"
+            content="Guess the technologies and test your knowledge in this daily puzzle game for developers."
+        />
+        <meta
+            name="twitter:image"
+            content="https://devpuzzle.net/og-image.png"
+        />
+    </Head>
+
+    <h1 class="text-4xl md:text-6xl text-center mb-4">
         DevPuzzle: The daily challenge for developers.
-    </p>
+    </h1>
 
     <nav aria-label="Game selection" class="mx-6 mb-6">
         <ul class="flex flex-col items-center gap-6">
             <!-- Guess the tech -->
-            <li class="group w-full md:w-3xl p-6 border border-neutral-200 dark:border-neutral-900 hover:border-neutral-500 dark:hover:border-neutral-600 transition-colors">
-                <Link href="/guess-the-tech" class="flex flex-col md:flex-row items-center">
+            <li>
+                <Link
+                    href="/guess-the-tech"
+                    class="flex flex-col md:flex-row items-center group w-full md:w-3xl p-6 border border-neutral-200 dark:border-neutral-900 hover:border-neutral-500 dark:hover:border-neutral-600 transition-colors"
+                >
                     <div
                         class="flex justify-center pr-0 pb-6 md:pr-6 md:pb-0 shrink-0 border-b md:border-b-0 border-r-0 md:border-r border-r-neutral-200 dark:border-r-neutral-900 border-b-neutral-200 dark:border-b-neutral-900 group-hover:border-r-neutral-500 group-hover:dark:border-r-neutral-600 transition-colors"
                     >
@@ -37,9 +79,14 @@ import revealTheTechIllustration from "@/assets/images/reveal-the-tech-game-illu
             </li>
 
             <!-- Reveal the tech -->
-            <li class="group w-full md:w-3xl p-6 border border-neutral-200 dark:border-neutral-900 hover:border-neutral-500 dark:hover:border-neutral-600 transition-colors">
-                <Link href="reveal-the-tech" class="flex flex-col md:flex-row items-center">
-                    <div class="flex justify-center pr-0 pb-6 md:pr-6 md:pb-0 shrink-0 border-b md:border-b-0 border-r-0 md:border-r border-r-neutral-200 dark:border-r-neutral-900 border-b-neutral-200 dark:border-b-neutral-900 group-hover:border-r-neutral-500 group-hover:dark:border-r-neutral-600 transition-colors">
+            <li>
+                <Link
+                    href="/reveal-the-tech"
+                    class="flex flex-col md:flex-row items-center group w-full md:w-3xl p-6 border border-neutral-200 dark:border-neutral-900 hover:border-neutral-500 dark:hover:border-neutral-600 transition-colors"
+                >
+                    <div
+                        class="flex justify-center pr-0 pb-6 md:pr-6 md:pb-0 shrink-0 border-b md:border-b-0 border-r-0 md:border-r border-r-neutral-200 dark:border-r-neutral-900 border-b-neutral-200 dark:border-b-neutral-900 group-hover:border-r-neutral-500 group-hover:dark:border-r-neutral-600 transition-colors"
+                    >
                         <img
                             :src="revealTheTechIllustration"
                             alt="Illustration for Decrypt the Tech game"
