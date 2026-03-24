@@ -18,6 +18,7 @@ return new class extends Migration
             $table->boolean('open_source');
             $table->date('release_date');
             $table->string("creator_type");
+            $table->string('hint');
             $table->timestamps();
         });
 
