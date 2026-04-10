@@ -17,14 +17,15 @@ return new class extends Migration
             $table->string('image_path');
             $table->boolean('open_source');
             $table->date('release_date');
-            $table->string("creator_type");
+            $table->string('creator_type', 20);
             $table->string('hint');
             $table->timestamp('created_at')->useCurrent();
         });
 
+        // Pivot tables:
+
         // Define the tech type(s)
         Schema::create('tech_type', function (Blueprint $table) {
-            $table->id();
             $table->foreignid('tech_id')->constrained('techs');
             $table->foreignid('type_id')->constrained('tech_types');
             $table->unique(['tech_id', 'type_id']);
@@ -32,7 +33,6 @@ return new class extends Migration
 
         // Define the tech area(s)
         Schema::create('tech_area', function (Blueprint $table) {
-            $table->id();
             $table->foreignid('tech_id')->constrained('techs');
             $table->foreignid('area_id')->constrained('tech_areas');
             $table->unique(['tech_id', 'area_id']);

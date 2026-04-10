@@ -13,7 +13,7 @@ class GuessTheTechGame extends Model
 
     const UPDATED_AT = null;
 
-    protected $table = [
+    protected $fillable = [
         'tech_id',
         'date',
     ];

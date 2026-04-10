@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('guess_the_tech_attempts', function (Blueprint $table) {
             $table->id();
             $table->string('session_id');
-            $table->foreignId('game_id')->constrained('guess_the_tech_games')->restrictOnDelete();
-            $table->foreignId('tech_id')->constrained()->restrictOnDelete();
+            $table->foreignUuid('game_id')->constrained('guess_the_tech_games')->restrictOnDelete();
+            $table->foreignId('tech_id')->constrained('techs')->restrictOnDelete();
             $table->timestamp('created_at')->useCurrent();
             $table->index(['session_id', 'game_id']);
         });

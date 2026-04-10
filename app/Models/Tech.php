@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Table;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+#[Table('techs')]
 class Tech extends Model
 {
     const UPDATED_AT = null;
@@ -17,14 +19,12 @@ class Tech extends Model
 
     public function types(): BelongsToMany
     {
-        return $this->belongsToMany(TechType::class, 'tech_type')
-            ->as('type');
+        return $this->belongsToMany(TechType::class, 'tech_type');
     }
 
     public function areas(): BelongsToMany
     {
-        return $this->belongsToMany(TechArea::class, 'tech_area')
-            ->as('area');
+        return $this->belongsToMany(TechArea::class, 'tech_area');
     }
 
     public function guessTheTechGames(): HasMany

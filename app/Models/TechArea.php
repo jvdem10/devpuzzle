@@ -11,7 +11,6 @@ class TechArea extends Model
 
     public function techs(): BelongsToMany
     {
-        return $this->belongsToMany(Tech::class, 'tech_area')
-            ->as('tech');
+        return $this->belongsToMany(Tech::class, 'tech_area');
     }
 }

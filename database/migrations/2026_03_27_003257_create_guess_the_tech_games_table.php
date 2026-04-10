@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('guess_the_tech_games', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignId('tech_id')->constrained()->restrictOnDelete();
+            $table->foreignId('tech_id')->constrained('techs')->restrictOnDelete();
             $table->date('date')->unique();
+
+            // We keep 'created_at' even with a 'date' column to track
+            // the exact creation timestamp of the record (useful for debugging and auditing)
             $table->timestamp('created_at')->useCurrent();
         });
     }
