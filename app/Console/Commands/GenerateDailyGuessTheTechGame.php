@@ -21,8 +21,6 @@ class GenerateDailyGuessTheTechGame extends Command implements Isolatable
      */
     public function handle(): void
     {
-        $today = Carbon::now('UTC')->toDateString();
-
         $recentTechsIds = GuessTheTechGame::query()
             ->where('date', '>=', now('UTC')->subDays(14)->toDateString())
             ->pluck('tech_id');
@@ -33,8 +31,8 @@ class GenerateDailyGuessTheTechGame extends Command implements Isolatable
             ->value('id');
 
         GuessTheTechGame::firstOrCreate(
-            ['date' => $today],
-            ['tech_id' => $newGameTechId],
+            ['date' => now('UTC')->toDateString()],
+            ['tech_id' => $newGameTechId]
         );
     }
 
